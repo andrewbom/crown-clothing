@@ -30,11 +30,13 @@ class SignUp extends React.Component {
     }
 
     try {
+      // this creates the user with firebase
       const { user } = await auth.createUserWithEmailAndPassword(
         email,
         password
       );
 
+      // this saves the user data in the firestore
       await createUserProfileDocument(user, { displayName });
 
       // this will clear our form after successfully saved the user in the firestore
