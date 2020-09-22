@@ -20,7 +20,11 @@
     height: 240px;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow: auto;
+  }
+
+  .cart-items::-webkit-scrollbar {
+    display: none;
   }
 
   button {
