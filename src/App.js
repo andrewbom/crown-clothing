@@ -73,8 +73,10 @@ const mapStateToProps = createStructuredSelector({
 });
 
 // 'mapdispatchtoprops' is to get the ACTIONS || 'mapstatetoprops' is to get your STATE from the redux store.
-// the first "setCurrentUser" is the function we define here and pass it to redux
+// the first "setCurrentUser" is the function we define here and point it to actions object
+// it then passes it to redux reducer through connect()
 // it then becomes the prop of <App> component and get called in componentDidMount()
+// Action => Middleware => Root Reducer => Store => DOM changes
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
